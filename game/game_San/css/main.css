@@ -1,0 +1,403 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+select,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+select::-ms-expand {
+  display: none;
+  /*IE*/
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.header {
+  padding: 4px 4px;
+  background: #000;
+  display: flex;
+  align-items: center;
+}
+.header .user, .header .money, .header .option {
+  display: flex;
+  align-items: center;
+}
+.header .arrow_prew {
+  width: 16px;
+  height: 30px;
+  background: url(../images/btn_back.svg) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  margin-right: 12px;
+}
+.header .arrow_prew:hover, .header .arrow_prew .active {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.header .user {
+  color: #fff;
+  margin-right: 4px;
+}
+.header .user .user_avatar {
+  background: #c6b11b;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 100%;
+  margin-right: 4px;
+}
+.header .money {
+  flex-grow: 1;
+  color: #c6b11b;
+  margin-right: 4px;
+}
+.header .money .money_icon {
+  width: 30px;
+  height: 30px;
+  background: url(../images/icon_memberMoney.svg) no-repeat;
+  background-size: cover;
+  margin-right: 4px;
+}
+.header .option span {
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.header .option span.saveMoney {
+  background: url(../images/btn_header_transfer.svg) no-repeat;
+  background-size: cover;
+}
+.header .option span.doc_icon {
+  background: url(../images/btn_betRecord.svg) no-repeat;
+  background-size: cover;
+}
+.header .option span.menu_icon {
+  background: url(../images/btn_menu.svg) no-repeat;
+  background-size: contain;
+  height: 24px;
+}
+.header .option span:last-child {
+  margin-right: 0;
+}
+.header .option span:hover, .header .option span .active {
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+/*-----------------*\
+    以下為版面控制
+\*-----------------*/
+span {
+  display: block;
+}
+
+.bet_option li, .bet_choiceBet li {
+  border: 1px solid #afafaf;
+  background: #f3f3f3;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.bet_option {
+  display: flex;
+  padding: 0 4px;
+  margin-bottom: 4px;
+}
+.bet_option li {
+  width: calc(100% / 5 - 2px);
+  margin-right: 4px;
+  padding: 18px 0 4px 0;
+  position: relative;
+  text-align: center;
+}
+.bet_option li .bet_guide {
+  width: 100%;
+  height: 30px;
+  background: url(../images/btn_prompt.svg) no-repeat;
+  background-size: contain;
+  background-position: right;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+.bet_option li h3 {
+  color: #64695d;
+  font-size: 18px;
+  line-height: 20px;
+}
+.bet_option li p {
+  color: #b0bfdb;
+  font-size: 15px;
+  line-height: 16px;
+}
+.bet_option li.super6 h3 {
+  color: #fc9e04;
+}
+.bet_option li:last-child {
+  margin-right: 0;
+}
+
+.bet_choiceBet {
+  display: flex;
+  padding: 0 4px;
+  margin-bottom: 4px;
+}
+.bet_choiceBet li {
+  width: calc(100% / 3 - 2px);
+  margin-right: 4px;
+}
+.bet_choiceBet li span {
+  color: #45cc61;
+}
+.bet_choiceBet li h3 {
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.bet_choiceBet li p {
+  color: #a1c0dc;
+}
+.bet_choiceBet li span, .bet_choiceBet li p {
+  font-size: 15px;
+  line-height: 16px;
+}
+.bet_choiceBet li.L_san h3 {
+  color: #0037fc;
+}
+.bet_choiceBet li.M_with h3 {
+  color: #04a946;
+}
+.bet_choiceBet li.R_home h3 {
+  color: #ff0202;
+}
+.bet_choiceBet li:last-child {
+  margin-right: 0;
+}
+
+.Chip_area {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  margin-bottom: 4px;
+}
+.Chip_area button {
+  width: calc(100% / 6 - 2px);
+  margin-right: 4px;
+  color: #fff;
+}
+.Chip_area button.gold_Level, .Chip_area button.silver_Level {
+  font-size: 12px;
+}
+.Chip_area button.gold_Level {
+  background: url(../images/img_goldChips_up.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 58px;
+}
+.Chip_area button.silver_Level {
+  background: url(../images/img_silverChips.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 36px;
+  padding-bottom: 4px;
+}
+.Chip_area button.b_chip {
+  height: 40px;
+  padding-bottom: 5px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.Chip_area button.b_chip.green {
+  background: url(../images/icon_chip_select500.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Chip_area button.b_chip.blue {
+  background: url(../images/icon_chip_select10K.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+  box-shadow: 0 0 6px 4px #1fe6ff;
+  border-radius: 100%;
+}
+.Chip_area button.b_chip.coffe {
+  background: url(../images/icon_chip_select50K.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Chip_area button.b_chip.gold {
+  background: url(../images/icon_chip_gold.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Chip_area button:last-child {
+  margin-right: 0;
+}
+
+.board_option {
+  display: flex;
+  padding: 4px;
+  background: #f3f4ef;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+.board_option button {
+  font-size: 17px;
+  padding: 10px 20px;
+}
+.board_option .board_base {
+  width: calc((100% / 3 - 2px) - (80px/3));
+  margin-right: 4px;
+}
+.board_option .board_final {
+  width: 80px;
+}
